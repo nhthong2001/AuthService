@@ -12,6 +12,15 @@ public class User {
         this.password = password;
         this.isDeleted = false;
     }
+    public User(String username, String password, String email, String address, String companyName, String fulname) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.address = address;
+        this.companyName = companyName;
+        this.fulname = fulname;
+        this.isDeleted = false;
+    }
 
     @Id
     @Column(name = "id")
@@ -24,6 +33,20 @@ public class User {
     @Column(name="password", nullable = false)
     private String password;
 
+    @Column(name="email")
+    public String email;
+
+    @Column(name="address")
+    public String address;
+
+    @Column(name="company_name")
+    public String companyName;
+
+    @Column(name="fulname")
+    public String fulname;
+
+    @Column(name="account_type")
+    public String accountType;
     @Column(name="unique_id", nullable = false)
     private String uniqueId;
 

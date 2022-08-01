@@ -36,7 +36,7 @@ public class AuthController {
     @PostMapping("/auth/register")
     public ResponseEntity<String> register(@RequestBody UserDto request) {
         try {
-            User registedUser = userService.addNewUser(request.getUsername(), request.getPassword());
+            User registedUser = userService.addNewUser(request);
             // Persist user to some persistent storage
             System.out.println("Info saved...");
 
@@ -46,10 +46,6 @@ public class AuthController {
         }
 
 
-    }
-    @GetMapping("/auth/test")
-    public ResponseEntity<String> welcome() {
-        return ResponseEntity.ok().body("Welcome!!!");
     }
 
 }
